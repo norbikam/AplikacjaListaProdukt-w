@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace AplikacjaListaProduktów
 {
@@ -33,7 +34,10 @@ namespace AplikacjaListaProduktów
             ListaProduktow.Add(new Produkt("01-11", "ołowek", 8, "Słupsk"));
             ListaProduktow.Add(new Produkt("PW-20", "pióro wieczne", 75, "Gdańsk"));
             ListaProduktow.Add(new Produkt("W-20", "zeszyt 32kart", 100, "Warszawa"));
+            ListaProduktow.Add(new Produkt("W-10", "zeszyt 32kart", 100, "Słupsk2"));
             lstProdukty.ItemsSource = ListaProduktow;
+            CollectionView widok = (CollectionView)CollectionViewSource.GetDefaultView(lstProdukty.ItemsSource);
+            widok.SortDescriptions.Add(new SortDescription("Magazyn", ListSortDirection.Ascending));
         }
     }
 }
