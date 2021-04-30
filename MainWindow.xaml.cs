@@ -33,8 +33,11 @@ namespace AplikacjaListaProduktów
             ListaProduktow = new ObservableCollection<Produkt>();
             ListaProduktow.Add(new Produkt("01-11", "ołowek", 8, "Słupsk"));
             ListaProduktow.Add(new Produkt("PW-20", "pióro wieczne", 75, "Gdańsk"));
-            ListaProduktow.Add(new Produkt("W-20", "zeszyt 32kart", 100, "Warszawa"));
-            ListaProduktow.Add(new Produkt("W-10", "zeszyt 32kart", 100, "Słupsk2"));
+            ListaProduktow.Add(new Produkt("W-20", "zeszyt 32kart", 200, "Warszawa"));
+            ListaProduktow.Add(new Produkt("W-10", "zeszyt 16kart", 100, "Słupsk2"));
+            ListaProduktow.Add(new Produkt("W-30", "zeszyt 64kart", 400, "Słupsk2"));
+            ListaProduktow.Add(new Produkt("W-15", "blok techniczny", 100, "Słupsk3"));
+            ListaProduktow.Add(new Produkt("W-05", "blok rysunkowy", 150, "Słupsk3"));
             lstProdukty.ItemsSource = ListaProduktow;
             CollectionView widok = (CollectionView)CollectionViewSource.GetDefaultView(lstProdukty.ItemsSource);
             widok.SortDescriptions.Add(new SortDescription("Magazyn", ListSortDirection.Ascending));
